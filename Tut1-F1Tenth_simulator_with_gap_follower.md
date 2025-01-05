@@ -121,4 +121,51 @@ root@12ff300395b4:/sim_ws#
 - **의미**  
   - `root@12ff300395b4`: Docker 컨테이너의 ID를 나타냅니다.  
   - `/sim_ws#`: Docker 컨테이너 내부의 작업 디렉토리가 `/sim_ws`로 설정되어 있음을 나타냅니다.  
-ㅆ
+
+## **4장. F1Tenth 시뮬레이터 열기 및 `wall_follow` 실행하기**
+
+---
+
+### **Step 1: F1Tenth 시뮬레이터 열기**
+
+1. **ROS2 환경 설정 및 빌드**  
+   아래 명령어를 차례대로 실행하여 ROS2 환경을 설정하고 빌드합니다:
+
+   ```bash
+   /sim_ws$ source /opt/ros/foxy/setup.bash  # ROS2 Foxy 환경 설정
+   /sim_ws$ colcon build                     # 작업 공간 빌드
+   /sim_ws$ source install/setup.bash        # 빌드된 ROS2 패키지 설정
+   ```
+
+2. **시뮬레이터 실행**  
+   시뮬레이터를 실행합니다:
+   ```bash
+   /sim_ws$ ros2 launch f1tenth_gym_ros gym_bridge_launch.py
+   ```
+   - `gym_bridge_launch.py`: 시뮬레이터를 구동하기 위한 기본 ROS2 런치 파일  
+   이 명령어를 실행하면 시뮬레이터 GUI가 열립니다.
+
+---
+
+### **Step 2: `wall_follow` 실행을 위한 새로운 터미널 열기**
+
+1. **Docker 컨테이너 접속 확인**  
+   새로운 터미널을 열어 컨테이너를 확인합니다:
+   ```bash
+   docker ps -a
+   ```
+   - `CONTAINER ID` 열에서 `f1tenth_gym_ros:latest` 이미지를 기반으로 한 컨테이너 ID를 확인합니다.
+
+2. **Docker 컨테이너 내부 접속**  
+   확인한 컨테이너 ID를 사용하여 해당 컨테이너에 접속합니다:
+   ```bash
+   docker exec -it container_id /bin/bash
+   ```
+   - `container_id`: 컨테이너 ID의 앞 2자 이상을 입력하면 충분합니다.
+   - 이 명령어를 실행하면 다시 컨테이너 내부로 접속할 수 있습니다.
+
+---
+
+### **결과**  
+컨테이너 내부에서 `wall_follow` 알고리즘을 실행할 준비가 완료되었습니다.  
+다음 단계에서는 `wall_follow`와 같은 ROS2 노드를 실행하여 시뮬레이션 테스트를 시작할 수 있습니다.
