@@ -62,7 +62,7 @@ docker build -t f1tenth_gym_ros -f Dockerfile .
 
 ---
 
-### **3장. Docker 컨테이너 및 시뮬레이터 실행**
+## **3장. Docker 컨테이너 및 시뮬레이터 실행**
 
 F1Tenth 시뮬레이터를 실행하기 위해 Docker 컨테이너를 실행하는 방법은 아래 두 가지 방식 중 하나를 사용합니다.
 
@@ -114,3 +114,12 @@ docker run -it \
    ```
 
 --- 
+Docker 컨테이너가 성공적으로 실행되면 터미널 프롬프트가 아래와 같이 표시됩니다:
+
+```bash
+root@12ff300395b4:/sim_ws#
+```
+
+- **의미**  
+  - `root@12ff300395b4`: Docker 컨테이너의 ID를 나타냅니다.  
+  - `/sim_ws#`: Docker 컨테이너 내부의 작업 디렉토리가 `/sim_ws`로 설정되어 있음을 나타냅니다.  
