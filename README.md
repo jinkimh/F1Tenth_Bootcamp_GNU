@@ -27,36 +27,37 @@ F1Tenth Simulator를 사용하기 위해 다음과 같은 필수 소프트웨어
 ---
 ## **2장. F1Tenth Docker 이미지 만들기**
 
-F1Tenth 시뮬레이터를 실행하기 위해 Docker 이미지를 생성합니다. 아래는 기본적인 작업 디렉토리 설정 및 Docker 이미지 빌드 과정입니다.
+F1Tenth 시뮬레이터를 실행하기 위한 Docker 이미지를 생성하는 과정은 다음과 같습니다.
 
 ---
 
 ### **1. 작업 디렉토리 생성 및 이동**  
 ```bash
-$ mkdir -p ~/f1tenth_ws  
-$ cd ~/f1tenth_ws  
+$ mkdir -p ~/f1tenth_ws/src  
+$ cd ~/f1tenth_ws/src  
 ```
-- `~/f1tenth_ws`: 시뮬레이터 관련 파일을 저장할 작업 디렉토리 생성 및 이동  
+- `~/f1tenth_ws/src`: 작업 공간 디렉토리 생성 및 이동  
+  - `src` 폴더는 소스 코드 저장을 위한 디렉토리입니다.
 
 ---
 
 ### **2. Git 저장소 클론**  
 ```bash
-$ git clone https://github.com/jinkimh/f1tenth_gym_ros_gnu  
+$ git clone https://github.com/f1tenth/f1tenth_gym_ros.git  
+$ git clone https://github.com/jinkimh/f1tenth-software-stack.git  
 ```
-- F1Tenth 시뮬레이터 GitHub 저장소를 클론하여 로컬에 저장  
-  - 해당 저장소에는 ROS2 기반 시뮬레이터 소스 코드와 Docker 관련 설정 파일이 포함되어 있습니다.
+- `f1tenth_gym_ros`: F1Tenth 시뮬레이터 ROS2 패키지  
+- `f1tenth-software-stack`: 자율주행 및 ROS 관련 주요 소프트웨어 패키지
 
 ---
 
-### **3. Docker 빌드 준비 및 실행**  
+### **3. Docker 이미지 빌드 준비 및 실행**  
 ```bash
-$ cd src/f1tenth_gym_ros  
+$ cd f1tenth_gym_ros  
 $ docker build -t f1tenth_gym_ros -f Dockerfile .  
 ```
-- `src/f1tenth_gym_ros`: 시뮬레이터 ROS 패키지 디렉토리로 이동  
-- Dockerfile을 이용해 Docker 이미지를 빌드합니다.  
-  - `-t f1tenth_gym_ros`: 빌드된 이미지에 태그를 지정 (이미지 이름: `f1tenth_gym_ros`)  
-  - `-f Dockerfile`: Dockerfile을 사용해 이미지 빌드  
+- `f1tenth_gym_ros` 디렉토리로 이동 후 Docker 이미지를 빌드합니다.  
+  - `-t f1tenth_gym_ros`: 이미지 이름 태그  
+  - `-f Dockerfile`: Dockerfile을 사용해 이미지 생성
 
 ---
