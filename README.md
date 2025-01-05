@@ -61,3 +61,56 @@ docker build -t f1tenth_gym_ros -f Dockerfile .
   - `-f Dockerfile`: Dockerfile을 사용해 이미지 생성
 
 ---
+
+### **3장. Docker 컨테이너 및 시뮬레이터 실행**
+
+F1Tenth 시뮬레이터를 실행하기 위해 Docker 컨테이너를 실행하는 방법은 아래 두 가지 방식 중 하나를 사용합니다.
+
+---
+
+### **옵션 1. 명령어를 직접 실행하는 방법**  
+아래 명령어를 터미널에 입력하여 Docker 컨테이너를 실행합니다.
+
+```bash
+xhost +local:docker  # Docker가 GUI 디스플레이에 접근할 수 있도록 권한 부여
+
+docker run -it \
+  --privileged \
+  --env="DISPLAY" \
+  --env="QT_X11_NO_MITSHM=1" \
+  --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
+  --volume="$(pwd)/f1tenth_ws/src/f1tenth_gym_ros:/sim_ws/src/f1tenth_gym_ros" \
+  --volume="$(pwd)/f1tenth_ws/src/f1tenth-software-stack:/sim_ws/src/f1tenth-software-stack" \
+  --name f110_gym_docker \
+  f1tenth_gym_ros:latest
+```
+
+- **옵션 설명**  
+  - `--privileged`: 하드웨어 접근 권한을 부여  
+  - `--env="DISPLAY"`: 그래픽 출력 설정  
+  - `--volume`: 로컬 디렉토리를 Docker 컨테이너 내부와 연결 (마운트)  
+  - `--name f110_gym_docker`: 컨테이너 이름을 `f110_gym_docker`로 설정  
+  - `f1tenth_gym_ros:latest`: 사용할 Docker 이미지 이름  
+
+---
+
+### **옵션 2. 스크립트 실행 방법**
+
+반복되는 명령어 입력을 방지하기 위해 쉘 스크립트를 사용합니다.
+
+1. **쉘 스크립트 생성 및 다운로드**  
+   `docker_run_f1tenth_sim.sh` 파일을 다운로드합니다.
+ 
+2. **실행 권한 부여**  
+   쉘 스크립트에 실행 권한을 부여합니다:
+   ```bash
+   chmod +x docker_run_f1tenth_sim.sh
+   ```
+
+3. **스크립트 실행**  
+   쉘 스크립트를 통해 컨테이너를 실행합니다:
+   ```bash
+   ./docker_run_f1tenth_sim.sh
+   ```
+
+--- 
