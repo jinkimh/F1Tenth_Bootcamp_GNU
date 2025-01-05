@@ -72,12 +72,6 @@ src/f1tenth-software-stack/csv_data/
 - 웨이포인트 파일은 `src/f1tenth-software-stack/csv_data/` 디렉토리에 저장되어야 합니다.  
   - 웨이포인트 파일과 맵 파일의 이름을 일관성 있게 지정하여 맵과 연동되도록 설정해야 합니다.
 
-### **웨이포인트 수동 생성 매뉴얼**
-
-웨이포인트를 수동으로 생성하는 방법에 대한 자세한 설명은 다음 링크를 참고해 주세요:
-
-[웨이포인트 수동 생성 방법 매뉴얼](https://github.com/jinkimh/f1tenth_bootcamp/blob/main/Tut3-Manual_creation_wp.md)
-
 ---
 
 ### **3. 새로운 맵을 사용한 Pure Pursuit 실행 방법**
