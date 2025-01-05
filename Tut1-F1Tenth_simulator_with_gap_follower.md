@@ -41,7 +41,7 @@ cd ~/f1tenth_ws/src
 
 ### **2. Git 저장소 클론**  
 ```bash
-git clone https://github.com/f1tenth/f1tenth_gym_ros.git  
+git clone https://github.com/jinkimh/f1tenth_gym_ros.git  
 git clone https://github.com/jinkimh/f1tenth-software-stack.git  
 ```
 - `f1tenth_gym_ros`: F1Tenth 시뮬레이터 ROS2 패키지  
