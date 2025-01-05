@@ -171,3 +171,43 @@ root@12ff300395b4:/sim_ws#
 ### **결과**  
 컨테이너 내부에서 `wall_follow` 알고리즘을 실행할 준비가 완료되었습니다.  
 다음 단계에서는 `wall_follow`와 같은 ROS2 노드를 실행하여 시뮬레이션 테스트를 시작할 수 있습니다.
+
+---
+
+### **Step 3: 새로운 터미널에서 `wall_follow` 노드 실행**
+
+1. **ROS2 환경 설정 및 빌드**
+   새로운 터미널을 열어 Docker 컨테이너에 접속한 후, 아래 명령어를 순서대로 실행합니다:
+
+   ```bash
+   /sim_ws$ source /opt/ros/foxy/setup.bash  # ROS2 Foxy 환경 설정
+   /sim_ws$ colcon build                     # 작업 공간 빌드
+   /sim_ws$ source install/setup.bash        # 빌드된 ROS2 패키지 설정
+   ```
+
+2. **`wall_follow` 알고리즘 노드 실행**
+   ```bash
+   /sim_ws$ ros2 run wall_follow wall_follow_node.py
+   ```
+   - **`wall_follow_node.py`**: 벽을 따라 자율주행하는 노드를 실행하는 스크립트입니다.
+   - 해당 노드를 실행하면 차량이 벽을 따라 주행하는 동작이 시뮬레이터에서 시각적으로 확인됩니다.
+
+---
+
+### **`wall_follow` 노드 실행 시 확인할 점**
+
+- **ROS2 토픽 연결 확인**
+  ```bash
+  /sim_ws$ ros2 topic list
+  ```
+  - 시뮬레이터가 `scan`, `odom`, `cmd_vel` 등의 토픽을 통해 센서 정보 및 제어 명령을 주고받는지 확인합니다.
+
+- **로그 메시지 확인**
+  - `wall_follow_node.py` 실행 시 출력되는 메시지를 통해 동작 상태를 점검합니다.
+
+---
+
+### **결과**
+- 시뮬레이터 내에서 `wall_follow` 알고리즘이 차량을 벽을 따라 주행하도록 제어합니다.
+- 시뮬레이션 테스트가 정상적으로 작동하면, 알고리즘을 수정하거나 새로운 주행 방식을 추가할 수 있습니다.  
+다음 장에서는 시뮬레이터 튜닝 및 새로운 경로 주행 방식을 구현하는 방법을 다룹니다.
