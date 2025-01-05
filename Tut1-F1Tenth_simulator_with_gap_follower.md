@@ -70,6 +70,8 @@ F1Tenth 시뮬레이터를 실행하기 위해 Docker 컨테이너를 실행하�
 아래 명령어를 터미널에 입력하여 Docker 컨테이너를 실행합니다.
 
 ```bash
+cd ~\f1tenth_ws
+
 xhost +local:docker  # Docker가 GUI 디스플레이에 접근할 수 있도록 권한 부여
 
 docker run -it \
