@@ -40,7 +40,7 @@ self.map_name = 'levine_2nd' <- 새로운 맵 파일 이름
 
 
 ### **2) CSV 파일 로드 코드 변경**  
-**위치**: 약 **44~45번째 줄**  
+**위치**: **44~45번째 줄**  
 **변경 전**:
 ```python
 csv_data = np.loadtxt(map_path + '/' + self.map_name + '.csv', delimiter=';', skiprows=0)  # csv data
