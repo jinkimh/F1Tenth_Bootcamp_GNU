@@ -22,11 +22,16 @@ F1Tenth Simulator를 실행하기 위해 다음 환경이 필요합니다.
 
 ### Step 2: ROS2 설치
 - **필수 버전:** ROS2 Foxy (Humble도 지원 가능)
-- ROS2는 F1Tenth 시뮬레이터와 ROS 노드 실행의 핵심 프레임워크
+- ROS2는 F1Tenth 시뮬레이터와 ROS 노드 실행의 핵심 프레임워크입니다.
+- ROS2 Foxy 설치 방법은 공식 문서에서 확인할 수 있습니다:  
+  [ROS2 Foxy Installation Guide](https://docs.ros.org/en/foxy/Installation.html)
+
 
 ### Step 3: Docker 설치
-- **Ubuntu:** 리눅스 Docker 설치 가이드 참고
-- **Windows 11:** Docker Desktop 설치 후 Linux 컨테이너 모드로 실행
+- **Ubuntu:** 리눅스 Docker 설치 가이드 참고  
+  [Docker Engine on Ubuntu 설치 가이드](https://docs.docker.com/engine/install/ubuntu/)
+- **Windows 11:** Docker Desktop 설치 후 Linux 컨테이너 모드로 실행  
+  [Docker Desktop for Windows 설치 가이드](https://docs.docker.com/desktop/install/windows-install/)
 
 ---
 
