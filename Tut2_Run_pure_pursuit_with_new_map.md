@@ -100,5 +100,5 @@ src/f1tenth-software-stack/csv_data/
 
 맵과 웨이포인트를 직접 설정해 다양한 시뮬레이션을 수행할 수 있으며, 이를 통해 Wall Following과 Pure Pursuit 알고리즘 성능을 비교·개선할 수 있습니다.
 
-```
+
 
