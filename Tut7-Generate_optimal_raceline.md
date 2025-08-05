@@ -1,8 +1,3 @@
-좋습니다. 그러면 README.md에 들어갈 수 있도록, **맵 이미지 예시 구조**와 **`params.yaml` 샘플**까지 포함한 완전 버전 튜토리얼을 만들어 드리겠습니다.
-
-아래 버전은 Bootcamp 참가자가 그대로 복사해서 사용할 수 있도록 디렉터리 구조, 예제 파일, 실행 순서까지 정리했습니다.
-
----
 
 ````markdown
 # F1Tenth Bootcamp — Optimal Trajectory Generator Tutorial
