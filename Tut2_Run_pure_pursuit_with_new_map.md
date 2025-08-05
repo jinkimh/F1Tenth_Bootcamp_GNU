@@ -1,5 +1,5 @@
 
-## **1장. Pure Pursuit 알고리즘 실행하기**
+## **Pure Pursuit 알고리즘 실행하기**
 
 현재 시뮬레이터 환경에서 Pure Pursuit 알고리즘을 사용하여 차량을 주행시켜봅니다. 아래는 Pure Pursuit 알고리즘 구동을 위한 단계입니다.
 
