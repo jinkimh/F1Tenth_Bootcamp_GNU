@@ -1,5 +1,3 @@
-
-````markdown
 # F1Tenth Bootcamp — Optimal Trajectory Generator Tutorial
 
 이 튜토리얼은 **(Optimal) Trajectory Generator**를 사용하여 레이싱 트랙의 최적 경로를 생성하는 방법을 안내합니다.
@@ -161,6 +159,3 @@ trajectory_generator/
 * 맵 이미지는 OpenCV 또는 ROS map\_server로 생성된 맵을 사용할 수 있습니다.
 
 ```
-
----
-
