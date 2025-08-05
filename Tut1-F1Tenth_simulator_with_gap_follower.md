@@ -72,8 +72,8 @@ docker run -it \
   --env="DISPLAY" \
   --env="QT_X11_NO_MITSHM=1" \
   --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
-  --volume="$(pwd)/src/f1tenth_gym_ros:/sim_ws/src/f1tenth_gym_ros" \
-  --volume="$(pwd)/src/f1tenth-software-stack:/sim_ws/src/f1tenth-software-stack" \
+  --volume="$HOME/src/f1tenth_gym_ros:/sim_ws/src/f1tenth_gym_ros" \
+  --volume="$HOME/src/f1tenth-software-stack:/sim_ws/src/f1tenth-software-stack" \
   --name f110_gym_docker \
   f1tenth_gym_ros:latest
 ```
@@ -147,11 +147,3 @@ ros2 topic list
 
 ```
 
----
-
-이렇게 정리하면 한눈에 실행 순서와 필요한 명령어를 확인할 수 있고,  
-GitHub README.md에 그대로 넣어도 가독성이 좋습니다.  
-
-원하시면 제가 여기에 **환경 구성도**와 **전체 실행 흐름 다이어그램**까지 추가해서 Bootcamp 자료로 쓸 수 있게 만들어 드릴까요?  
-그렇게 하면 참가자들이 설치-빌드-실행 관계를 한 번에 이해할 수 있습니다.
-```
