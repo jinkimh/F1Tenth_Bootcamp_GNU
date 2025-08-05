@@ -1,4 +1,10 @@
+좋습니다. 그러면 README.md에 들어갈 수 있도록, **맵 이미지 예시 구조**와 **`params.yaml` 샘플**까지 포함한 완전 버전 튜토리얼을 만들어 드리겠습니다.
 
+아래 버전은 Bootcamp 참가자가 그대로 복사해서 사용할 수 있도록 디렉터리 구조, 예제 파일, 실행 순서까지 정리했습니다.
+
+---
+
+````markdown
 # F1Tenth Bootcamp — Optimal Trajectory Generator Tutorial
 
 이 튜토리얼은 **(Optimal) Trajectory Generator**를 사용하여 레이싱 트랙의 최적 경로를 생성하는 방법을 안내합니다.
@@ -55,16 +61,46 @@ curl -L -O https://github.com/zzjun725/f1tenth-racing-stack-ICRA22/raw/refs/head
 
 ## 3. Configuration
 
-1. **맵 데이터 추가**
+### (1) 맵 데이터 추가
 
-   * `trajectory_generator/maps` 디렉터리를 생성 후, 맵 이미지(`.png`, `.jpg`)와 `.yaml` 파일을 넣어주세요.
+* `trajectory_generator/maps` 디렉터리를 생성한 후, **맵 이미지 파일**(`.png`, `.jpg`)과 **맵 메타데이터 파일**(`.yaml`)을 넣어주세요.
 
-2. **파라미터 수정**
+```plaintext
+trajectory_generator/
+ ├── config/
+ │    └── params.yaml
+ ├── maps/
+ │    ├── mytrack.png
+ │    └── mytrack.yaml
+```
 
-   * `trajectory_generator/config/params.yaml` 파일에서 아래 항목을 변경:
+`mytrack.yaml` 예시:
 
-     * `map_name`: 사용하려는 맵 이름
-     * `map_img_ext`: 맵 이미지 확장자 (`.png`, `.jpg` 등)
+```yaml
+image: mytrack.png
+resolution: 0.05
+origin: [0.0, 0.0, 0.0]
+negate: 0
+occupied_thresh: 0.65
+free_thresh: 0.196
+```
+
+---
+
+### (2) params.yaml 수정
+
+* `trajectory_generator/config/params.yaml` 파일에서 **맵 이름**과 **확장자**를 변경하세요.
+
+```yaml
+# params.yaml 예시
+map_name: mytrack
+map_img_ext: .png
+
+# 경로 생성 파라미터 (필요 시 조정)
+track_width: 0.8
+vehicle_width: 0.3
+smoothing_weight: 0.5
+```
 
 ---
 
@@ -107,15 +143,29 @@ conda install -c conda-forge quadprog=0.1.7
 
 ---
 
+## 7. 디렉터리 구조 예시
+
+```plaintext
+trajectory_generator/
+ ├── config/
+ │    └── params.yaml
+ ├── maps/
+ │    ├── mytrack.png
+ │    └── mytrack.yaml
+ ├── requirements.txt
+ ├── lane_generator.py
+ ├── main_globaltraj.py
+```
+
+---
+
 ## 📌 참고
 
 * 본 튜토리얼은 **F1Tenth Bootcamp** 실습 환경에서 사용됩니다.
 * Python 3.8 환경에서 테스트되었습니다.
+* 맵 이미지는 OpenCV 또는 ROS map\_server로 생성된 맵을 사용할 수 있습니다.
 
 ```
 
 ---
 
-원하시면 제가 여기에 **맵 이미지 예시 구조**와 **params.yaml 샘플**까지 포함해서, Bootcamp 참가자가 그대로 따라할 수 있는 완전 버전을 만들어 드릴 수도 있습니다.  
-그렇게 할까요? 그러면 참가자가 환경 설정에서 시행착오를 줄일 수 있습니다.
-```
