@@ -8,13 +8,7 @@
 Python **3.8** 버전의 가상환경 사용을 권장합니다.  
 아래 두 가지 방법 중 하나를 선택하세요.
 
-### (1) venv 사용
-```bash
-python3 -m venv ./traj_generator
-source ./traj_generator/bin/activate  # 가상환경 활성화
-````
-
-### (2) Anaconda 사용
+### (1) Anaconda 사용
 
 ```bash
 # 아나콘다 설치
@@ -27,6 +21,14 @@ conda config --set auto_activate_base False
 conda create -n traj_generator python=3.8
 conda activate traj_generator
 ```
+
+### (2) venv 사용
+```bash
+python3 -m venv ./traj_generator
+source ./traj_generator/bin/activate  # 가상환경 활성화
+````
+
+
 
 ---
 
