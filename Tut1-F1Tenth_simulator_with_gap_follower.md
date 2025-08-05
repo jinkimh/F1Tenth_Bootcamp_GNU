@@ -10,6 +10,7 @@ F1Tenth Simulator를 실행하기 위해 다음 환경이 필요합니다.
 - **Windows 사용자의 경우:**  
   Windows 환경에서도 리눅스 명령어와 개발 도구를 사용하기 위해 **WSL(Windows Subsystem for Linux)**를 설치하여 Ubuntu 환경을 구성할 수 있습니다.
 
+```
 #### WSL 설치 방법
 1. **PowerShell 관리자 모드 실행**  
    - Windows 검색창에 `PowerShell` 입력 → "관리자 권한으로 실행" 선택
@@ -17,7 +18,7 @@ F1Tenth Simulator를 실행하기 위해 다음 환경이 필요합니다.
 2. **WSL 및 Ubuntu 설치 명령어 입력**
    ```powershell
    wsl --install -d Ubuntu-22.04
-
+```
 
 ### Step 2: ROS2 설치
 - **필수 버전:** ROS2 Foxy (Humble도 지원 가능)
