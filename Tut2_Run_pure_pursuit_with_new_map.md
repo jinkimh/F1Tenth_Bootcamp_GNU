@@ -21,14 +21,29 @@
 
 ### **Step 2: Pure Pursuit 실행**
 
-2. **Pure Pursuit 노드 실행**  
+1. **시뮬레이터 실행**
    새로운 터미널을 열어 Docker 컨테이너에 접속한 후, 아래 명령어를 입력합니다:
    ```bash
-   /sim_ws$ source /opt/ros/foxy/setup.bash  # ROS2 환경 설정
-   /sim_ws$ source install/setup.bash        # ROS2 워크스페이스 설정
+   /sim_ws$ source /opt/ros/foxy/setup.bash    # ROS2 환경 설정
+   /sim_ws$ source install/setup.bash          # ROS2 워크스페이스 설정
+   /sim_ws$ ros2 launch f1tenth_gym_ros gym_bridge_launch.py
+````
+
+* `gym_bridge_launch.py`: F1Tenth 시뮬레이터 GUI를 실행하고 ROS2 환경과 연결하는 런치 파일입니다.
+
+2. **Pure Pursuit 노드 실행**
+   새로운 터미널을 열어 동일하게 Docker 컨테이너에 접속한 후, 아래 명령어를 입력합니다:
+
+   ```bash
+   /sim_ws$ source /opt/ros/foxy/setup.bash    # ROS2 환경 설정
+   /sim_ws$ source install/setup.bash          # ROS2 워크스페이스 설정
    /sim_ws$ ros2 run wall_follow wall_follow_node.py
    ```
-   - `wall_follow_node.py`: Pure Pursuit 알고리즘을 실행하는 노드입니다.
+
+   * `wall_follow_node.py`: Pure Pursuit 알고리즘을 실행하여 차량이 경로를 따라 주행하도록 하는 노드입니다.
+
+```
+
 
 ---
 
