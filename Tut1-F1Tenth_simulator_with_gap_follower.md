@@ -222,8 +222,6 @@ alias f1gui="docker start f110_gym_docker && docker exec -it -e DISPLAY=$DISPLAY
 
 이제 `f1start` 또는 `f1gui` 명령만으로 컨테이너에 접속할 수 있습니다.
 
-```
-
 # ROS2 Teleop Twist Keyboard 실행 가이드
 
 이 문서는 Docker 컨테이너 내부에서 ROS2 환경을 설정하고  
