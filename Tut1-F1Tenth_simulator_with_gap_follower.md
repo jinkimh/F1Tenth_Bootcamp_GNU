@@ -224,6 +224,55 @@ alias f1gui="docker start f110_gym_docker && docker exec -it -e DISPLAY=$DISPLAY
 
 ```
 
+# ROS2 Teleop Twist Keyboard 실행 가이드
 
+이 문서는 Docker 컨테이너 내부에서 ROS2 환경을 설정하고  
+`teleop_twist_keyboard` 노드를 실행하는 과정을 설명합니다.
+
+---
+
+## 1. ROS2 환경 설정
+
+Docker 컨테이너 내부에서 ROS2를 사용하려면  
+아래 명령어로 ROS2 Foxy와 현재 작업 공간(`sim_ws`)의 환경을 불러옵니다.
+
+```bash
+# ROS2 Foxy 환경 설정
+source /opt/ros/foxy/setup.bash
+
+# 현재 작업 공간 환경 설정
+source install/setup.bash
+````
+
+---
+
+## 2. teleop\_twist\_keyboard 실행
+
+`teleop_twist_keyboard` 패키지를 실행하여 키보드 입력으로
+로봇의 속도를 제어합니다.
+
+```bash
+ros2 run teleop_twist_keyboard teleop_twist_keyboard
 ```
+
+---
+
+## 3. 실행 후 조작 방법
+
+`teleop_twist_keyboard` 실행 후 아래 키를 사용하여 속도와 방향을 제어합니다.
+
+* **이동**: `i` (앞), `,` (뒤), `j` (좌), `l` (우)
+* **속도 조절**: `u` / `o` (앞 방향), `m` / `.` (뒤 방향)
+* **정지**: `k`
+* **종료**: `Ctrl + C`
+
+---
+
+## 참고
+
+* 실행 전 반드시 ROS2와 작업 공간 환경을 `source` 해야 합니다.
+* `teleop_twist_keyboard`는 터미널 입력을 기반으로 동작하므로, 실행 중 해당 터미널을 계속 활성화 상태로 유지해야 합니다.
+
+ 
+
 
