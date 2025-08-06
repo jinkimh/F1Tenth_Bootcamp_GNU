@@ -1,6 +1,6 @@
 # F1Tenth AV 시뮬레이터 실행 가이드
 
-## 1장. 사전 준비
+## 1. 사전 준비
 
 F1Tenth Simulator를 실행하기 위해 다음 환경이 필요합니다.
 
@@ -35,7 +35,7 @@ F1Tenth Simulator를 실행하기 위해 다음 환경이 필요합니다.
 
 ---
 
-## 2장. F1Tenth Docker 이미지 빌드
+## 2. F1Tenth Docker 이미지 빌드
 
 ### 1. 작업 디렉토리 생성
 ```bash
@@ -59,7 +59,7 @@ docker build -t f1tenth_gym_ros -f Dockerfile .
 
 ---
 
-## 3장. Docker 컨테이너 실행
+## 3. Docker 컨테이너 실행
 
 ### 옵션 1: 명령어 직접 실행
 
@@ -93,7 +93,7 @@ root@12ff300395b4:/sim_ws#
 
 ---
 
-## 4장. 시뮬레이터와 `wall_follow` 실행
+## 4. 시뮬레이터와 `wall_follow` 실행
 
 ### Step 1: 시뮬레이터 실행
 
@@ -124,7 +124,7 @@ ros2 run wall_follow wall_follow_node.py
 
 ---
 
-## 5장. 실행 확인
+## 5. 실행 확인
 
 ### ROS2 토픽 확인
 
