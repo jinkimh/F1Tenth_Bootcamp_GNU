@@ -149,24 +149,6 @@ xhost +local:docker
 
 ## 🛠️ 6. 유용한 Docker 명령어 모음
 
-```bash
-# 컨테이너 목록 보기 (정지된 것도 포함)
-docker ps -a
-
-# 컨테이너 강제 종료
-docker stop f110_gym_docker
-
-# 컨테이너 삭제
-docker rm f110_gym_docker
-
-# 이미지 삭제
-docker rmi f1tenth_gym_ros:latest
-```
-
----
-
-## 🛠️ 6. 유용한 Docker 명령어 모음
-
 Docker 컨테이너를 관리할 때 자주 사용하는 명령어들을 정리했습니다.
 
 ### 📋 컨테이너/이미지 관리
