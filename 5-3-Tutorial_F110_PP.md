@@ -51,7 +51,7 @@ git clone https://github.com/jinkimh/f1tenth-software-stack.git
 | 27 | `self.map_name = 'levine_2nd'`                                                       | 사용할 맵 이름으로 수정                |
 | 44 | `csv_data = np.loadtxt(...)`                                                         | 사용 중인 CSV 파일 포맷에 맞게 열 인덱스 조정 |
 | 49 | `self.ref_speed = csv_data[:, 5]`                                                    | 속도 열이 없으면 해당 라인 제거 가능        |
-| 96 | `self.drive_msg.drive.speed = (-1.0 if self.is_real else 1.0) * self.ref_speed[...]` | 속도값이 적절히 수정          |
+| 96 | `self.drive_msg.drive.speed = (-1.0 if self.is_real else 1.0) * self.ref_speed[...]` | 속도값을 적절히 수정          |
 
 ---
 
