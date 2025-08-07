@@ -86,6 +86,7 @@ source /opt/ros/foxy/setup.bash
 source install/setup.bash
 ros2 launch particle_filter localize_launch.py
 ```
+이 과정이 끝나면 rviz2 상에서 자동차의 위치를 설정합니다. 
 
 ### 4. Pure Pursuit 실행 (4번 터미널)
 
