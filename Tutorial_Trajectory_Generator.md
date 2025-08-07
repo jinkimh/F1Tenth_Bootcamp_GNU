@@ -55,6 +55,7 @@ rm -rf .git
 ````
 
 # 의존성 설치
+
 cd trajectory_generator
 pip install -r requirements.txt
  
