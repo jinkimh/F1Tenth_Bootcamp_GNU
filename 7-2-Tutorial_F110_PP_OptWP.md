@@ -10,8 +10,11 @@
 ### 1. 맵 및 맵 설정 파일 준비
 
 - SLAM Toolbox를 통해 `.pgm`, `.yaml` 형식의 맵 파일을 생성합니다.
+  
+### 2. Optimal Trajectory Generator를 이용, WP 파일을 준비합니다.
+- [Optimal Trajectory Generator를 이용, WP생성하는 법](https://example.com)
 
-### 2. Particle Filter 설정
+### 3. Particle Filter 설정
 
 - 생성한 맵과 맵.yaml 파일을 다음 위치에 복사합니다:
 
