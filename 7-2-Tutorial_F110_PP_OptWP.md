@@ -12,7 +12,7 @@
 - SLAM Toolbox를 통해 `.pgm`, `.yaml` 형식의 맵 파일을 생성합니다.
   
 ### 2. Optimal Trajectory Generator를 이용, WP 파일을 준비합니다.
-- [Optimal Trajectory Generator를 이용, WP생성하는 법]([https://example.com](https://github.com/jinkimh/f1tenth_bootcamp/blob/main/7-1-Tutorial_Trajectory_Generator.md))
+- [Optimal Trajectory Generator를 이용, WP생성하는 법](https://github.com/jinkimh/f1tenth_bootcamp/blob/main/7-1-Tutorial_Trajectory_Generator.md)
 
 ### 3. Particle Filter 설정
 
