@@ -213,7 +213,4 @@ ros2 launch f1tenth_stack bringup_launch.py
 본 문서는 F1Tenth 자율주행 플랫폼의 실험 및 교육용으로 제작되었으며,  
 무단 복제 및 상업적 사용을 금지합니다.
 ```
-
-```
-
 ---
