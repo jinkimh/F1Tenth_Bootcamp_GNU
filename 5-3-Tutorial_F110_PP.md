@@ -12,7 +12,7 @@
 
 ### 2. Particle Filter 설정
 
-- 생성한 맵을 다음 위치에 복사합니다:
+- 생성한 맵과 맵.yaml 파일을 다음 위치에 복사합니다:
 
 ```text
 particle_filter/maps/
