@@ -1,4 +1,4 @@
-# F1TENTH Particle Filter 설치 및 실행 가이드
+# F1TENTH Particle Filter 설치 및 실행 
 
 이 문서는 F1TENTH 플랫폼에서 Particle Filter를 설치하고 실행하는 방법을 설명합니다.  
 옵션으로 `range_libc`를 사용하여 빠른 레이저 레인지 모델을 사용할 수도 있습니다.
