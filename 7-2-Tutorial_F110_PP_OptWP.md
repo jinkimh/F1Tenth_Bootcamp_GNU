@@ -1,5 +1,5 @@
 # F1Tenth AV에서 Pure Pursuit 실행 
-(Optimal Trajectory Generator를 활용한 WP를 사용하는 경우)
+# (Optimal Trajectory Generator를 활용한 WP를 사용하는 경우)
 
 이 문서는 실제 F1Tenth AV 차량에서 optimal Trajectory Generator (wp_gen.py)를 활용한 WP를 사용하는 경우, Pure Pursuit(PP) 알고리즘을 실행하기 위한 전체 절차를 정리한 가이드입니다.
 
