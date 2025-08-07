@@ -1,8 +1,3 @@
-아래는 요청하신 내용을 기반으로 작성한 **F1Tenth AV에서 Pure Pursuit(PP)를 실행하는 가이드**의 `README.md` 파일입니다. 구조화하여 실습 순서와 설정 내용을 한눈에 파악할 수 있도록 정리했습니다.
-
----
-
-````markdown
 # F1Tenth AV에서 Pure Pursuit 실행 가이드
 
 이 문서는 실제 F1Tenth AV 차량에서 Pure Pursuit(PP) 알고리즘을 실행하기 위한 전체 절차를 정리한 가이드입니다.
