@@ -1,4 +1,4 @@
-# F1Tenth Bootcamp — Optimal Trajectory Generator Tutorial
+# Optimal Trajectory Generator를 이용, WP 생성
 
 이 튜토리얼은 **(Optimal) Trajectory Generator**를 사용하여 레이싱 트랙의 최적 경로를 생성하는 방법을 안내합니다.
 
