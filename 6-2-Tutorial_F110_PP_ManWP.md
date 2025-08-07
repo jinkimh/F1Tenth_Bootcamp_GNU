@@ -109,7 +109,6 @@ ros2 run pure_pursuit pure_pursuit_node.py
 * Particle Filter의 초기 위치는 RViz에서 **"2D Pose Estimate"** 도구로 지정해야 합니다.
 * 맵 이름과 Waypoint 파일 이름은 일치해야 하며, `.csv` 형식은 Pure Pursuit 코드와 호환되어야 합니다.
 
-```
 
 ---
 
