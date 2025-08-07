@@ -55,15 +55,22 @@ rm -rf .git
 ````
 
 # 의존성 설치
-```bash
 cd trajectory_generator
 pip install -r requirements.txt
-```
+ 
 
 
 # config 디렉터리 생성 및 params.yaml 다운로드
 mkdir config && cd config
-curl -L -O https://github.com/zzjun725/f1tenth-racing-stack-ICRA22/raw/refs/heads/main/config/params.yaml
+curl -L -O https://raw.githubusercontent.com/jinkimh/f1tenth-racing-stack-ICRA22/main/config/params.yam
+
+# `maps` 디렉토리 다운로드
+cd ../ # config 폴더 밖으로
+curl -L -o maps.zip https://github.com/jinkimh/f1tenth-racing-stack-ICRA22/archive/refs/heads/main.zip
+unzip maps.zip 'f1tenth-racing-stack-ICRA22-main/maps/*'
+mv f1tenth-racing-stack-ICRA22-main/maps ./maps
+rm -rf f1tenth-racing-stack-ICRA22-main maps.zip
+
 ```
 
 ---
