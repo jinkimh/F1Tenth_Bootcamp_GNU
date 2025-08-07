@@ -52,6 +52,18 @@
 Pure Pursuit 알고리즘은 별도의 노드나 패키지에서 실행할 수 있으며, 방법은 Wall Following 실행과 동일합니다.
 예시:
 
+### (1) 시뮬레이터 실행
+
+새로운 터미널을 열어 Docker 컨테이너에 접속 후:
+
+```bash
+/sim_ws$ source /opt/ros/foxy/setup.bash
+/sim_ws$ source install/setup.bash
+/sim_ws$ ros2 launch f1tenth_gym_ros gym_bridge_launch.py
+```
+### (2) Pure Pursuit 노드 실행
+
+다른 터미널에서 Docker 컨테이너에 접속 후:
 ```bash
 /sim_ws$ source /opt/ros/foxy/setup.bash
 /sim_ws$ source install/setup.bash
