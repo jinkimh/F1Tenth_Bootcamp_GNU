@@ -35,17 +35,31 @@ source ./traj_generator/bin/activate  # 가상환경 활성화
 ## 2. Installation
 
 ```bash
-# Sparse Checkout으로 필요한 디렉터리만 가져오기
+# 새 Git 저장소 초기화
 git init
+
+# Sparse Checkout 활성화
 git config core.sparseCheckout true
+
+# 원격 저장소 추가 (zzjun725 저장소)
 git remote add -f origin https://github.com/zzjun725/f1tenth-racing-stack-ICRA22.git
+
+# 필요한 디렉토리만 명시
 echo trajectory_generator/* > .git/info/sparse-checkout
+
+# main 브랜치에서 가져오기
 git pull origin main
-rm -rf .gita
+
+# 불필요한 Git 메타데이터 제거 (선택)
+rm -rf .git
+````
 
 # 의존성 설치
+```bash
 cd trajectory_generator
 pip install -r requirements.txt
+```
+
 
 # config 디렉터리 생성 및 params.yaml 다운로드
 mkdir config && cd config
