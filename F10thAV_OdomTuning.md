@@ -170,6 +170,3 @@ ros2 launch f1tenth_stack bringup_launch.py
 ```
 
 ---
-
-이 문서를 실제 `lab01_odometry_tuning.md` 파일로 저장하거나 `.pdf`로 변환할 수 있습니다. 원하시면 파일로 제공해 드릴게요!
-```
