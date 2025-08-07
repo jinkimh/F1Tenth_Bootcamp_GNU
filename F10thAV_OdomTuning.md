@@ -4,7 +4,7 @@
 F1Tenth 자율주행 차량의 주행 정확도를 높이기 위해서는 Odometry 관련 파라미터를 적절히 튜닝해야 합니다.  
 본 실습에서는 **ERPM 게인**, **조향각 오프셋**, **조향각 게인**을 조정하여 직진 및 회전 정확도를 향상시키는 방법을 학습합니다.
 
-> ✅ 참고: [Mushr Odometry Tuning Guide (ROS1)](https://mushr.io/tutorials/tuning/)
+> ✅ Source: [Mushr Odometry Tuning Guide (ROS1)](https://mushr.io/tutorials/tuning/)
 
 ---
 
