@@ -47,7 +47,7 @@ git clone https://github.com/jinkimh/f1tenth-software-stack.git
 
 | 라인 | 코드                                                                                   | 설명                           |
 | -- | ------------------------------------------------------------------------------------ | ---------------------------- |
-| 25 | `self.is_real = True`                                                                | 실제 차량에서 실행할 경우 `True`로 설정    |
+| 25 | `self.is_real = False`                                                                | 실제 차량에서 실행할 경우 `True`로 설정    |
 | 27 | `self.map_name = 'levine_2nd'`                                                       | 사용할 맵 이름으로 수정                |
 | 44 | `csv_data = np.loadtxt(...)`                                                         | 사용 중인 CSV 파일 포맷에 맞게 열 인덱스 조정 |
 | 49 | `self.ref_speed = csv_data[:, 5]`                                                    | 속도 열이 없으면 해당 라인 제거 가능        |
