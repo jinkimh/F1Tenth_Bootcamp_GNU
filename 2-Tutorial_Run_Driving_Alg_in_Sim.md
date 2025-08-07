@@ -1,4 +1,4 @@
-# F1Tenth 시뮬레이터 활용 — 드라이빙 알고리즘 실행 (Wall Following & Pure Pursuit)
+# F1Tenth 시뮬레이터 활용 - 드라이빙 알고리즘 실행 (Wall Following & Pure Pursuit)
 
 이 문서는 F1Tenth 시뮬레이터 환경에서 **Wall Following**과 **Pure Pursuit** 알고리즘을 실행하는 절차를 안내합니다.
 
