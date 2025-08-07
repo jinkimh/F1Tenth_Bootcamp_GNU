@@ -1,4 +1,4 @@
-# F1TENTH 시뮬레이션 및 자율주행 튜토리얼
+# F1TENTH 시뮬레이터를 위한 자율주행 튜토리얼
 
 이 저장소는 F1TENTH 시뮬레이터 및 실제 자율주행 차량(F1Tenth AV)에서 다양한 자율주행 알고리즘을 실행하기 위한 실습 튜토리얼을 제공합니다.
 
@@ -96,6 +96,7 @@ f1tenth_ws/
 **[jin.kim@gnu.ac.kr](mailto:jin.kim@gnu.ac.kr)**
 
 ```
+
 
 
 
