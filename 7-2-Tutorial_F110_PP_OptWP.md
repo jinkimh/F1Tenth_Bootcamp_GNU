@@ -27,7 +27,7 @@ particle_filter/config/localize.yaml
 ---
 
 ## 🚘 주행 알고리즘 다운로드
-
+* ~/f1tenth_ws/src/f1tenth-software-stack 가 존재하면 이 과정 생략
 ```bash
 cd ~/f1tenth_ws/src
 git clone https://github.com/jinkimh/f1tenth-software-stack.git
