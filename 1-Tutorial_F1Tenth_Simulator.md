@@ -233,6 +233,19 @@ ros2 run teleop_twist_keyboard teleop_twist_keyboard
 * 실행 전 반드시 ROS2와 작업 공간 환경을 `source` 해야 합니다.
 * `teleop_twist_keyboard`는 터미널 입력을 기반으로 동작하므로, 실행 중 해당 터미널을 계속 활성화 상태로 유지해야 합니다.
 
- 
+---
+
+## 📄 저작권
+
+```
+© 2025 Jin Kim, Gyeongsang National University
+
+본 문서는 F1Tenth 자율주행 플랫폼의 실험 및 교육용으로 제작되었으며,  
+무단 복제 및 상업적 사용을 금지합니다.
+```
+
+---
+
+
 
 
