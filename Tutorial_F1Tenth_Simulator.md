@@ -77,7 +77,11 @@ docker run -it \
   --name f110_gym_docker \
   f1tenth_gym_ros:latest
 ```
+컨테이너 실행 후 프롬프트 예시:
 
+```
+root@12ff300395b4:/sim_ws#
+```
 ### 옵션 2: 실행 스크립트 사용
 
 ### 1. 실행 스크립트 만들기
