@@ -165,7 +165,72 @@ docker rmi f1tenth_gym_ros:latest
 
 ---
 
-## 🚀 7. 실행 alias 등록 (선택 사항)
+아래는 **🛠️ 6. 유용한 Docker 명령어 모음** 섹션을 보강한 `README.md` 형태입니다.
+특히 **sudo 없이 docker 명령을 사용하는 방법**을 설명과 함께 추가했습니다.
+
+---
+
+````markdown
+## 🛠️ 6. 유용한 Docker 명령어 모음
+
+Docker 컨테이너를 관리할 때 자주 사용하는 명령어들을 정리했습니다.
+
+### 📋 컨테이너/이미지 관리
+
+```bash
+# 컨테이너 목록 보기 (정지된 것도 포함)
+docker ps -a
+
+# 실행 중인 컨테이너 강제 종료
+docker stop f110_gym_docker
+
+# 컨테이너 삭제
+docker rm f110_gym_docker
+
+# Docker 이미지 삭제
+docker rmi f1tenth_gym_ros:latest
+````
+
+---
+
+## 🔓 7. sudo 없이 docker 명령어 사용하기
+
+Docker는 기본적으로 root 권한이 필요한 데몬이기 때문에, 일반 사용자 계정에서 실행하려면 매번 `sudo`를 붙여야 합니다.
+아래 절차를 통해 `sudo` 없이도 `docker` 명령을 사용할 수 있습니다.
+
+#### ✅ 1단계: 현재 사용자를 `docker` 그룹에 추가
+
+```bash
+sudo usermod -aG docker $USER
+```
+
+> `$USER`는 현재 로그인한 계정명을 의미합니다.
+
+#### ✅ 2단계: 그룹 변경 적용을 위해 로그아웃/로그인 또는 재부팅
+
+```bash
+# 또는 바로 적용하고 싶다면
+newgrp docker
+```
+
+#### ✅ 3단계: 테스트
+
+```bash
+docker ps
+```
+
+→ `Got permission denied` 오류 없이 실행되면 설정 성공입니다.
+
+---
+
+### 📌 참고
+
+* 위 설정은 Ubuntu 기준이며, 대부분의 Linux 배포판에서 동일하게 동작합니다.
+* 이 설정은 **보안 상의 위험이 존재**하므로, 멀티 유저 서버에서는 주의가 필요합니다.
+
+---
+
+## 🚀 9. 실행 alias 등록 (선택 사항)
 
 자주 사용하는 명령어를 단축어로 등록해두면 편리합니다.
 
@@ -219,9 +284,3 @@ f1tenth_ws/
 
 ---
 
-```
-
----
-
-필요하시면 이 문서를 실제 `docker_usage_tutorial.md` 파일로 저장해드릴 수 있고, `.pdf` 형식으로 변환하거나 실행 스크립트도 함께 생성해드릴 수 있습니다. 원하시면 알려주세요!
-```
