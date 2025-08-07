@@ -194,36 +194,6 @@ f1gui     # RViz 등 GUI 사용 가능 접속
 
 ---
 
-## 🧪 실습 예제 (전체 흐름 따라 하기)
-
-```bash
-# [호스트 터미널]
-cd ~/f1tenth_ws
-xhost +local:docker
-
-# 처음 컨테이너 실행
-docker run -it \
-  --privileged \
-  --env="DISPLAY" \
-  --env="QT_X11_NO_MITSHM=1" \
-  --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
-  --volume="$HOME/f1tenth_ws/src/f1tenth_gym_ros:/sim_ws/src/f1tenth_gym_ros" \
-  --volume="$HOME/f1tenth_ws/src/f1tenth-software-stack:/sim_ws/src/f1tenth-software-stack" \
-  --name f110_gym_docker \
-  f1tenth_gym_ros:latest
-
-# [컨테이너 내부]
-source /opt/ros/foxy/setup.bash
-cd /sim_ws
-colcon build
-source install/setup.bash
-
-# 시뮬레이터 또는 주행 알고리즘 실행
-ros2 launch f1tenth_gym_ros gym_bridge_launch.py
-```
-
----
-
 ## 📂 디렉토리 구조 예시
 
 ```text
