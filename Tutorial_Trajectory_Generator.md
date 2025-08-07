@@ -52,14 +52,11 @@ git pull origin main
 
 # 불필요한 Git 메타데이터 제거 (선택)
 rm -rf .git
-````
 
 # 의존성 설치
-
 cd trajectory_generator
 pip install -r requirements.txt
  
-
 
 # config 디렉터리 생성 및 params.yaml 다운로드
 mkdir config && cd config
