@@ -10,27 +10,69 @@
 **이미지 생성 → 컨테이너 실행 → 재접속 및 GUI 실행**까지 전 과정을 안내합니다.
 
 ---
+---
 
 ## 📦 1. Docker 이미지 준비
 
-### ✅ 1-1. Dockerfile을 이용해 이미지 빌드하기
-
+### 1. 작업 디렉토리 생성
 ```bash
-cd ~/f1tenth_ws  # Dockerfile이 있는 경로로 이동
-docker build -t f1tenth_gym_ros:latest .
+mkdir -p ~/f1tenth_ws/src
+cd ~/f1tenth_ws/src
 ````
 
-> 이미지 이름: `f1tenth_gym_ros:latest`
+### 2. Git 저장소 클론
+
+```bash
+git clone https://github.com/jinkimh/f1tenth_gym_ros.git
+git clone https://github.com/jinkimh/f1tenth-software-stack.git
+```
+
+### 3. Docker 이미지 빌드
+
+```bash
+cd f1tenth_gym_ros
+docker build -t f1tenth_gym_ros -f Dockerfile .
+```
 
 ---
 
 ## 🧱 2. 컨테이너 최초 실행
 
-### ✅ 2-1. 시뮬레이터 Docker 컨테이너 실행
+### 옵션 1: 명령어 직접 실행
 
 ```bash
 cd ~/f1tenth_ws
-xhost +local:docker  # GUI 프로그램 실행 허용
+xhost +local:docker
+
+docker run -it \
+  --privileged \
+  --env="DISPLAY" \
+  --env="QT_X11_NO_MITSHM=1" \
+  --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
+  --volume="$HOME/f1tenth_ws/src/f1tenth_gym_ros:/sim_ws/src/f1tenth_gym_ros" \
+  --volume="$HOME/f1tenth_ws/src/f1tenth-software-stack:/sim_ws/src/f1tenth-software-stack" \
+  --name f110_gym_docker \
+  f1tenth_gym_ros:latest
+```
+컨테이너 실행 후 프롬프트 예시:
+
+```
+root@12ff300395b4:/sim_ws#
+```
+### 옵션 2: 실행 스크립트 사용
+
+### 1. 실행 스크립트 만들기
+
+다음 내용을 `docker_run_f1tenth_sim.sh` 파일로 저장합니다:
+
+```bash
+#!/bin/bash
+
+# F1Tenth 시뮬레이터용 Docker 실행 스크립트
+
+cd ~/f1tenth_ws || { echo "f1tenth_ws 디렉토리가 존재하지 않습니다."; exit 1; }
+
+xhost +local:docker
 
 docker run -it \
   --privileged \
@@ -43,11 +85,23 @@ docker run -it \
   f1tenth_gym_ros:latest
 ```
 
-> 처음 실행하면 컨테이너가 생성되고 `/sim_ws`로 진입합니다.
-
-### ⛳ 진입 예시:
+### 2. 실행 권한 부여
 
 ```bash
+chmod +x docker_run_f1tenth_sim.sh
+```
+
+### 3. 스크립트 실행
+
+
+```bash
+chmod +x docker_run_f1tenth_sim.sh
+./docker_run_f1tenth_sim.sh
+```
+
+컨테이너 실행 후 프롬프트 예시:
+
+```
 root@12ff300395b4:/sim_ws#
 ```
 
