@@ -70,8 +70,7 @@ f1tenth_ws/
 │   ├── particle_filter/
 │   └── ...
 ├── install/
-├── build/
-└── docker_run_f1tenth_sim.sh
+└── build/ 
 ````
 
 ---
@@ -96,6 +95,7 @@ f1tenth_ws/
 **[jin.kim@gnu.ac.kr](mailto:jin.kim@gnu.ac.kr)**
 
 ```
+
 
 
 
