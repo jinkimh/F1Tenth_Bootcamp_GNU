@@ -18,7 +18,7 @@
 particle_filter/maps/
 ````
 
-* 다음 설정 파일을 열어 사용할 맵 경로로 수정합니다:
+* 다음 설정 파일을 열어 사용할 맵 이름을 수정합니다:
 
 ```bash
 particle_filter/config/localize.yaml
