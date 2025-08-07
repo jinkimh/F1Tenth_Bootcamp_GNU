@@ -80,6 +80,39 @@ docker run -it \
 
 ### 옵션 2: 실행 스크립트 사용
 
+### 1. 실행 스크립트 만들기
+
+다음 내용을 `docker_run_f1tenth_sim.sh` 파일로 저장합니다:
+
+```bash
+#!/bin/bash
+
+# F1Tenth 시뮬레이터용 Docker 실행 스크립트
+
+cd ~/f1tenth_ws || { echo "f1tenth_ws 디렉토리가 존재하지 않습니다."; exit 1; }
+
+xhost +local:docker
+
+docker run -it \
+  --privileged \
+  --env="DISPLAY" \
+  --env="QT_X11_NO_MITSHM=1" \
+  --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
+  --volume="$HOME/f1tenth_ws/src/f1tenth_gym_ros:/sim_ws/src/f1tenth_gym_ros" \
+  --volume="$HOME/f1tenth_ws/src/f1tenth-software-stack:/sim_ws/src/f1tenth-software-stack" \
+  --name f110_gym_docker \
+  f1tenth_gym_ros:latest
+```
+
+### 2. 실행 권한 부여
+
+```bash
+chmod +x docker_run_f1tenth_sim.sh
+```
+
+### 3. 스크립트 실행
+
+
 ```bash
 chmod +x docker_run_f1tenth_sim.sh
 ./docker_run_f1tenth_sim.sh
