@@ -3,8 +3,8 @@
 
 ---
 
-### **1장 pure_pursuit_node.py 수정 **  
-본 장에서는 **수동으로 생성된 웨이포인트**를 사용하여 시뮬레이션을 실행하는 방법과 필요한 코드 수정 사항을 설명합니다.  
+### 1. pure_pursuit_node.py 수정 **  
+본 장에서는 수동으로 생성된 웨이포인트를 사용하여 시뮬레이션을 실행하는 방법과 필요한 코드 수정 사항을 설명합니다.  
 - **파일 위치**: `/sim_ws/src/f1tenth-software-stack/pure_pursuit/scripts/pure_pursuit_node.py`  
 
 ---
