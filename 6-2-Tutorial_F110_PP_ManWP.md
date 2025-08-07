@@ -1,4 +1,4 @@
-# F1Tenth AV에서 Pure Pursuit 실행 가이드
+# F1Tenth AV에서 Pure Pursuit 실행
 
 이 문서는 실제 F1Tenth AV 차량에서 Pure Pursuit(PP) 알고리즘을 실행하기 위한 전체 절차를 정리한 가이드입니다.
 
