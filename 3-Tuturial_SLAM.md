@@ -1,5 +1,5 @@
 
-# F1TENTH SLAM Toolbox 설치 및 맵 생성 가이드
+# F1TENTH SLAM Toolbox 설치 및 맵 생성
 
 이 문서는 F1TENTH 플랫폼에서 `slam_toolbox`를 설치하고, 실시간 SLAM을 통해 지도를 생성하며, RViz2에서 시각화 및 저장하는 방법을 안내합니다.
 
