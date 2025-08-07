@@ -183,33 +183,57 @@ ros2 topic list
 * 정상 동작 후 알고리즘 수정 및 주행 방식 확장 가능
 
 
-
-# ROS2 Teleop Twist Keyboard 실행 가이드
-
-이 문서는 Docker 컨테이너 내부에서 ROS2 환경을 설정하고  
-`teleop_twist_keyboard` 노드를 실행하는 과정을 설명합니다.
+물론입니다! 요청하신 대로 Docker 컨테이너에 재진입하는 과정을 **문서 맨 앞에** 추가하고 전체 내용을 자연스럽게 통합하여 보완한 `README.md` 형태로 다시 구성해드렸습니다.
 
 ---
 
-## 1. ROS2 환경 설정
+````markdown
+# 🧭 ROS2 Teleop Twist Keyboard 실행 가이드
 
-Docker 컨테이너 내부에서 ROS2를 사용하려면  
-아래 명령어로 ROS2 Foxy와 현재 작업 공간(`sim_ws`)의 환경을 불러옵니다.
+이 문서는 **Docker 컨테이너 내부에서 ROS2 환경을 설정하고**,  
+`teleop_twist_keyboard` 노드를 통해 키보드 입력으로 자율주행 차량을 수동 조작하는 방법을 안내합니다.
+
+---
+
+## 🚪 0. Docker 컨테이너 재진입
+
+이미 생성된 Docker 컨테이너(`f110_gym_docker`)에 접속하려면 다음 명령어를 사용합니다:
 
 ```bash
-# ROS2 Foxy 환경 설정
-source /opt/ros/foxy/setup.bash
+# 컨테이너 실행 (백그라운드)
+docker start f110_gym_docker
 
-# 현재 작업 공간 환경 설정
-source install/setup.bash
+# bash 셸로 진입
+docker exec -it f110_gym_docker bash
 ````
+
+> ⚠️ GUI를 사용하는 경우에는 아래 명령을 사용하세요:
+
+```bash
+docker exec -it -e DISPLAY=$DISPLAY -e QT_X11_NO_MITSHM=1 f110_gym_docker bash
+```
 
 ---
 
-## 2. teleop\_twist\_keyboard 실행
+## ⚙️ 1. ROS2 환경 설정
 
-`teleop_twist_keyboard` 패키지를 실행하여 키보드 입력으로
-로봇의 속도를 제어합니다.
+Docker 컨테이너 내부에서 ROS2를 사용하려면
+ROS2 Foxy와 작업 공간(`sim_ws`) 환경을 아래와 같이 설정합니다:
+
+```bash
+# ROS2 Foxy 설정
+source /opt/ros/foxy/setup.bash
+
+# sim_ws 작업 공간 설정
+source install/setup.bash
+```
+
+---
+
+## 🕹️ 2. teleop\_twist\_keyboard 실행
+
+키보드 입력으로 차량의 속도와 방향을 제어할 수 있도록
+teleop\_twist\_keyboard 노드를 실행합니다:
 
 ```bash
 ros2 run teleop_twist_keyboard teleop_twist_keyboard
@@ -217,21 +241,51 @@ ros2 run teleop_twist_keyboard teleop_twist_keyboard
 
 ---
 
-## 3. 실행 후 조작 방법
+## 🎮 3. 키보드 조작법 요약
 
-`teleop_twist_keyboard` 실행 후 아래 키를 사용하여 속도와 방향을 제어합니다.
+실행 후 아래 키를 눌러 차량을 조작할 수 있습니다:
 
-* **이동**: `i` (앞), `,` (뒤), `j` (좌), `l` (우)
-* **속도 조절**: `u` / `o` (앞 방향), `m` / `.` (뒤 방향)
-* **정지**: `k`
-* **종료**: `Ctrl + C`
+| 동작    | 키                 |
+| ----- | ----------------- |
+| 전진    | `i`               |
+| 후진    | `,`               |
+| 좌회전   | `j`               |
+| 우회전   | `l`               |
+| 속도 증가 | `u` (앞) / `m` (뒤) |
+| 속도 감소 | `o` (앞) / `.` (뒤) |
+| 정지    | `k`               |
+| 종료    | `Ctrl + C`        |
 
 ---
 
-## 참고
+## 📝 참고 사항
 
-* 실행 전 반드시 ROS2와 작업 공간 환경을 `source` 해야 합니다.
-* `teleop_twist_keyboard`는 터미널 입력을 기반으로 동작하므로, 실행 중 해당 터미널을 계속 활성화 상태로 유지해야 합니다.
+* 실행 전 반드시 다음 두 명령어로 ROS2 환경을 불러와야 합니다:
+
+  ```bash
+  source /opt/ros/foxy/setup.bash
+  source install/setup.bash
+  ```
+
+* `teleop_twist_keyboard`는 터미널 상에서 키 입력을 직접 받아 처리하므로,
+  실행 중인 터미널을 **항상 활성화 상태로 유지**해야 합니다 (즉, 창을 클릭한 상태).
+
+---
+
+## 📄 예시 실행 흐름
+
+```bash
+# 1. 컨테이너 접속
+docker start f110_gym_docker
+docker exec -it f110_gym_docker bash
+
+# 2. 환경 설정
+source /opt/ros/foxy/setup.bash
+source install/setup.bash
+
+# 3. 노드 실행
+ros2 run teleop_twist_keyboard teleop_twist_keyboard
+```
 
 ---
 
@@ -240,12 +294,7 @@ ros2 run teleop_twist_keyboard teleop_twist_keyboard
 ```
 © 2025 Jin Kim, Gyeongsang National University
 
-본 문서는 F1Tenth 자율주행 플랫폼의 실험 및 교육용으로 제작되었으며,  
-무단 복제 및 상업적 사용을 금지합니다.
+본 문서는 ROS2 및 F1Tenth 기반 실습용으로 제작되었으며,
+교육 및 연구 목적 외의 무단 복제 및 재배포를 금지합니다.
 ```
-
----
-
-
-
 
