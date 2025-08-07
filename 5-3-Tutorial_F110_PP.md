@@ -112,7 +112,3 @@ ros2 run pure_pursuit pure_pursuit_node.py
 ```
 
 ---
-
-필요하시면 이 내용을 `.md` 파일로 저장하거나, `.pdf`로 변환해드릴 수 있습니다. 원하시는 형식이 있으신가요?
-```
-
