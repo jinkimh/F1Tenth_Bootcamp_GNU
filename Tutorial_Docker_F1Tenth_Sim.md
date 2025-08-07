@@ -165,12 +165,6 @@ docker rmi f1tenth_gym_ros:latest
 
 ---
 
-아래는 **🛠️ 6. 유용한 Docker 명령어 모음** 섹션을 보강한 `README.md` 형태입니다.
-특히 **sudo 없이 docker 명령을 사용하는 방법**을 설명과 함께 추가했습니다.
-
----
-
-````markdown
 ## 🛠️ 6. 유용한 Docker 명령어 모음
 
 Docker 컨테이너를 관리할 때 자주 사용하는 명령어들을 정리했습니다.
