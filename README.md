@@ -60,7 +60,7 @@
 
 ---
 
-## 📂 디렉토리 구성 예시
+## 📂 디렉토리 구성
 
 ```bash
 f1tenth_ws/
@@ -96,5 +96,6 @@ f1tenth_ws/
 **[jin.kim@gnu.ac.kr](mailto:jin.kim@gnu.ac.kr)**
 
 ```
+
 
 
