@@ -57,7 +57,6 @@ rm -rf .git
 cd trajectory_generator
 pip install -r requirements.txt
  
-
 # config 디렉터리 생성 및 params.yaml 다운로드
 mkdir config && cd config
 curl -L -O https://raw.githubusercontent.com/jinkimh/f1tenth-racing-stack-ICRA22/main/config/params.yam
