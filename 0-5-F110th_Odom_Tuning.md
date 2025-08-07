@@ -158,6 +158,8 @@ double current_speed = -(-state->state.speed - speed_to_erpm_offset_) / speed_to
 ```bash
 cd ~/f1tenth_ws
 colcon build
+source install/setup.bash
+ros2 launch f1tenth_stack bringup_launch.py
 ```
 
 ---
