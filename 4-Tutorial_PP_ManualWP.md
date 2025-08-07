@@ -1,97 +1,149 @@
- 
-## 수동 생성 WP를 시뮬레이터 내에서 PP와 실행하는 방법 
+# 수동 생성 웨이포인트(WP)를 시뮬레이터에서 Pure Pursuit와 함께 실행하는 방법
+
+본 문서는 사용자가 수동으로 생성한 `(x, y)` 웨이포인트를 기반으로,  
+F1Tenth 시뮬레이터 내에서 Pure Pursuit 알고리즘을 실행하는 절차 및 코드 수정 사항을 안내합니다.
 
 ---
 
-### 1. pure_pursuit_node.py 수정 **  
-본 장에서는 수동으로 생성된 웨이포인트를 사용하여 시뮬레이션을 실행하는 방법과 필요한 코드 수정 사항을 설명합니다.  
-- **파일 위치**: `/sim_ws/src/f1tenth-software-stack/pure_pursuit/scripts/pure_pursuit_node.py`  
+## 1. Pure Pursuit 노드 코드 수정
+
+**파일 위치**:  
+`/sim_ws/src/f1tenth-software-stack/pure_pursuit/scripts/pure_pursuit_node.py`
 
 ---
 
-### ** 이전 코드와의 주요 차이점**
-| **항목**           | **수동 웨이포인트** | **Tutorial-2 웨이포인트** |
-|-------------------|-------------------|-------------------|
-| **포맷 구성**       | `(x, y)` 좌표만 포함 | `(x, y)` 외 속도, 제어값 포함 |
-| **사용 목적**       | 단순 경로 실행       | 정밀한 경로 및 속도 제어 |
-| **데이터 형태**     | 단순 CSV (2열)       | 복합 CSV (여러 열) |
+### 🔄 기존 Tutorial-2 방식과의 차이점
+
+| 항목           | 수동 웨이포인트 방식         | Tutorial-2 방식             |
+|----------------|-----------------------------|-----------------------------|
+| 포맷 구성       | `(x, y)` 좌표만 포함         | `(x, y, speed, steering...)` 등 여러 열 |
+| 사용 목적       | 단순 경로 주행               | 정밀한 속도 및 제어 경로 주행  |
+| 데이터 형태     | 단순 CSV (2열)              | 복합 CSV (다중 열)          |
 
 ---
 
-####   **수동 웨이포인트 CSV 파일**의 열 구성
-  - 열 구조: `(x, y)` 두 개의 열만 포함된 CSV 파일
-  - 예시:
-    ```
-    x, y
-    1.0, 2.0
-    2.0, 3.5
-    3.2, 4.8
-    ```
+### 🗂 수동 웨이포인트 CSV 예시
+
+```csv
+x, y
+1.0, 2.0
+2.0, 3.5
+3.2, 4.8
+````
+
+* 열 구성: `x`, `y` (헤더 포함)
+* 쉼표 구분자 사용
 
 ---
 
-### ** 코드 수정 절차**
+## 2. 코드 수정 절차
 
-#### **1) 맵 파일 이름 변경  ** 27번쨰 줄**
-``` python
-self.map_name = 'levine_2nd' <- 새로운 맵 파일 이름 
-```
+### ✅ 1) 맵 이름 설정 (27번째 줄)
 
-
-### **2) CSV 파일 로드 코드 변경**  
-**위치**: **44~45번째 줄**  
-**변경 전**:
 ```python
-csv_data = np.loadtxt(map_path + '/' + self.map_name + '.csv', delimiter=';', skiprows=0)  # csv data
-self.waypoints = csv_data[:, 1:3]  # first row is indices
+self.map_name = 'levine_2nd'  # 사용할 맵 이름으로 수정
 ```
-**변경 후**:
-```python
-csv_data = np.loadtxt(map_path + '/' + self.map_name + '.csv', delimiter=',', skiprows=1)  # csv data
-self.waypoints = csv_data[:, :]  # (x, y)만 포함된 웨이포인트 데이터
-```
-**수정 내용**:
-- `delimiter=';'` → `delimiter=','`: 구분자를 세미콜론에서 쉼표로 변경  
-- `skiprows=0` → `skiprows=1`: 첫 번째 행을 건너뛰어 헤더를 무시  
-- `[:, 1:3]` → `[:, :]`: 모든 열을 참조하도록 수정  
 
 ---
 
-### **3) 속도 설정 코드 변경**  
-**위치**: **96번째 줄**  
-**변경 전**:
+### ✅ 2) CSV 파일 로딩 방식 수정 (44–45번째 줄)
+
+**변경 전:**
+
+```python
+csv_data = np.loadtxt(map_path + '/' + self.map_name + '.csv', delimiter=';', skiprows=0)
+self.waypoints = csv_data[:, 1:3]
+```
+
+**변경 후:**
+
+```python
+csv_data = np.loadtxt(map_path + '/' + self.map_name + '.csv', delimiter=',', skiprows=1)
+self.waypoints = csv_data[:, :]  # (x, y) 열 전체 사용
+```
+
+**변경 내용 요약:**
+
+* `delimiter=';'` → `','` (쉼표 구분자)
+* `skiprows=0` → `1` (헤더 무시)
+* `[:, 1:3]` → `[:, :]` (모든 열 참조)
+
+---
+
+### ✅ 3) 속도 설정 방식 수정 (96번째 줄)
+
+**변경 전:**
+
 ```python
 self.drive_msg.drive.speed = (-1.0 if self.is_real else 1.0) * self.ref_speed[self.closest_index]
 ```
-**변경 후**:
+
+**변경 후:**
+
 ```python
-self.drive_msg.drive.speed = 2.0  # 고정 속도 2.0 m/s
+self.drive_msg.drive.speed = 2.0  # 고정 속도 설정 (예: 2.0 m/s)
 ```
-**수정 내용**:
-- `self.ref_speed` 배열에서 속도 값을 참조하던 방식을 제거  
-- 고정된 속도 `2.0 m/s`로 설정  
 
 ---
 
-### **4) 속도 입력값 무시**  
-**위치**: **49번째 줄**  
-**변경 전**:
+### ✅ 4) 속도 입력 관련 코드 제거 (49번째 줄)
+
+**기존 코드:**
+
 ```python
-# self.ref_speed = csv_data[:, 5] * 0.6  # max speed for levine 2nd - real is 2m/s
-self.ref_speed = csv_data[:, 5]  # max speed - sim is 10m/s
+# self.ref_speed = csv_data[:, 5] * 0.6
+self.ref_speed = csv_data[:, 5]
 ```
-**변경 후**:
+
+**변경 후:**
+
 ```python
-# self.ref_speed = csv_data[:, 5] * 0.6  # max speed for levine 2nd - real is 2m/s
-# self.ref_speed = csv_data[:, 5]  # max speed - sim is 10m/s
+# self.ref_speed = csv_data[:, 5] * 0.6
+# self.ref_speed = csv_data[:, 5]
 ```
-**수정 내용**:
-- self.ref_speed = csv_data[:, 5]  # max speed - sim is 10m/s -> 주석처리 
+
+* `ref_speed` 관련 내용을 주석 처리하여 사용하지 않도록 함
 
 ---
 
-### **5) 최종 점검 항목**  
-**파일 위치**: `/sim_ws/src/f1tenth-software-stack/pure_pursuit/scripts/pure_pursuit_node.py`  
+## 3. Pure Pursuit 실행
 
+시뮬레이터 내에서 다음 순서로 Pure Pursuit 알고리즘을 실행합니다.
+
+---
+
+### 🖥️ (1) 시뮬레이터 브릿지 실행
+
+```bash
+/sim_ws$ source /opt/ros/foxy/setup.bash
+/sim_ws$ source install/setup.bash
+/sim_ws$ ros2 launch f1tenth_gym_ros gym_bridge_launch.py
+```
+
+---
+
+### 🚗 (2) Pure Pursuit 노드 실행
+
+```bash
+/sim_ws$ source /opt/ros/foxy/setup.bash
+/sim_ws$ source install/setup.bash
+/sim_ws$ ros2 run pure_pursuit pure_pursuit_node.py
+```
+
+* 해당 노드는 `/csv_data/<map_name>.csv` 파일의 웨이포인트를 따라 차량을 주행시킴
+
+---
+
+## 4. 최종 점검 체크리스트 ✅
+
+| 항목         | 확인사항                                                                           |
+| ---------- | ------------------------------------------------------------------------------ |
+| **CSV 경로** | `~/sim_ws/src/f1tenth-software-stack/csv_data/<map_name>.csv`에 위치              |
+| **CSV 포맷** | `(x, y)` 두 열만 포함, 쉼표 구분자, 첫 줄은 헤더                                              |
+| **코드 위치**  | `/sim_ws/src/f1tenth-software-stack/pure_pursuit/scripts/pure_pursuit_node.py` |
+| **속도 설정**  | 고정 속도 `2.0` m/s 또는 상황에 맞게 조절                                                   |
+| **노드 실행**  | `ros2 run pure_pursuit pure_pursuit_node.py` 명령으로 실행                           |
+
+---
 
 
