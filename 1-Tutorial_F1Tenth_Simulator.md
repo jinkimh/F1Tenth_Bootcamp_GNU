@@ -143,7 +143,7 @@ ros2 launch f1tenth_gym_ros gym_bridge_launch.py
 
 * 실행 후 GUI 시뮬레이터 창이 표시됨
 * 
-  <img src="https://github.com/jinkimh/f1tenth_bootcamp/blob/main/figures/sim_rviz.png" alt="F110th Simulator" width="300"/>
+  <img src="https://github.com/jinkimh/f1tenth_bootcamp/blob/main/figures/sim_rviz.png" alt="F110th Simulator" width="600"/>
 
 
 ### Step 2: 새로운 터미널에서 컨테이너 접속
