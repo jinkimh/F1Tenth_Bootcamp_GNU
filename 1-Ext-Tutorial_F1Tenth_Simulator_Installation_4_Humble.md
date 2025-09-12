@@ -23,6 +23,10 @@ echo $ROS_DISTRO   # humble
 ## 1) Python 3.10 venv
 
 ```bash
+# 1) Python 3.10과 venv/헤더 설치 (버전 명시!)
+sudo apt update
+sudo apt install -y python3.10 python3.10-venv python3.10-distutils python3.10-dev build-essential
+
 mkdir -p ~/.venvs
 python3.10 -m venv ~/.venvs/f1tenth_humble310
 source ~/.venvs/f1tenth_humble310/bin/activate
