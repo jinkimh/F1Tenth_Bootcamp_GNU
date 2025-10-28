@@ -1,4 +1,4 @@
-# *& Lab-05 (Team Project) – Implementation of simple_safety_node on F1TENTH Car (ROS 2 Foxy)**
+# ** Lab-05 (Team Project) – Implementation of simple_safety_node on F1TENTH Car (ROS 2 Foxy)**
 
 ---
 
