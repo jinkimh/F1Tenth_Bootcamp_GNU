@@ -1,10 +1,4 @@
-좋습니다. 아래는 위의 내용을 **팀 과제(Team Project)** 형식으로 완전히 재구성한 버전입니다.
-개인 실습 중심의 Lab-05를 팀 기반 수행으로 바꾸었으며, **역할 분담**, **공동 제출 항목**, **평가 기준(팀/개인 혼합)** 등을 포함했습니다.
-(ROS 2 Foxy + 실제 F1TENTH 차량 기준)
-
----
-
-# 🚗 **Team Project: Lab-05 – Implementation of simple_safety_node on F1TENTH Car (ROS 2 Foxy)**
+# **Team Project: Lab-05 – Implementation of simple_safety_node on F1TENTH Car (ROS 2 Foxy)**
 
 ---
 
