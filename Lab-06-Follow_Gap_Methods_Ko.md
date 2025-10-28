@@ -1,5 +1,5 @@
 # ** Lab-06 (Team Project) ** 
-# **                       – Implementation of `follow_the_gap` on the F1TENTH Car (ROS 2 Foxy)**
+## : Implementation of `follow_the_gap` on the F1TENTH Car (ROS 2 Foxy) 
 
 ---
 
