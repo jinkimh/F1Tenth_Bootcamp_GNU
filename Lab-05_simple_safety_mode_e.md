@@ -1,4 +1,4 @@
-**Lab-05: Implementation of simple_safety_node in the F1TENTH Simulator**
+## Lab-05: Implementation of simple_safety_node in the F1TENTH Simulator**
 
 ---
 
