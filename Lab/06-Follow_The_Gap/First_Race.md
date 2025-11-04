@@ -1,7 +1,3 @@
-Here’s the updated assignment specification with an explicit requirement that **each team must base its development on the Lab-06 materials** from your repository link:
-
----
-
 # **Lab-06 Team Project — FTG Racer Challenge (ROS 2 Foxy)**
 
 **Race Day:** **November 17, 2025 (Mon)**
