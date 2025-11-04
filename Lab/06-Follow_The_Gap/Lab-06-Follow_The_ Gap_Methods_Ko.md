@@ -8,8 +8,7 @@
 본 프로젝트의 목표는 실제 **F1TENTH 차량(AV)** 상에서 **Follow-the-Gap (FTG)** 반응형 주행 노드를 구현·튜닝·검증하는 것입니다.
 Lab-05와 동일한 패키지 제작 흐름을 따르되, 노드 로직은 아래 레퍼런스 코드를 활용합니다:
 
-* 참고 코드: `reactive_node.py`
-  [https://github.com/jinkimh/f1tenth-software-stack/blob/main/gap_follow/scripts/reactive_node.py](https://github.com/jinkimh/f1tenth-software-stack/blob/main/gap_follow/scripts/reactive_node.py)
+
 
 FTG는 LiDAR `/scan`으로부터 전처리(노이즈 제거, 범위 클리핑), **버블(bubble) 마스킹**, **최대 갭 탐색**, **갭 중앙 조향**(steer-to-midpoint), **속도 프로파일링** 단계로 동작합니다.
 
@@ -84,7 +83,10 @@ mkdir -p gap_follow
 nano gap_follow/reactive_node.py
 ```
 
-* 위 링크의 `reactive_node.py` 내용을 **복사/붙여넣기** 합니다.
+* 다음 링크의 `reactive_node.py` 내용을 **복사/붙여넣기** 합니다.
+
+* * 참고 코드: `reactive_node.py`
+[https://github.com/f1tenth/f1tenth_lab4_template/blob/main/gap_follow/scripts/reactive_node.py]
 
 2. **Foxy/실차 토픽 확인 및 수정**
 
