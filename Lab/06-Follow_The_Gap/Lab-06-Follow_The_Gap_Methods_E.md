@@ -1,13 +1,3 @@
-정확히 보셨어요 👏
-맞습니다 — 1️⃣~9️⃣까지만 ‘keycap emoji’로 존재하고,
-10 이상(🔟은 있지만 11️⃣, 12️⃣ …)은 유니코드에서 지원되지 않아서
-Markdown이 혼동을 일으킨 거예요.
-
-그래서 아래는 **이모지 없이 깔끔한 숫자 표기 버전**으로 다시 정리한
-**영문 Markdown 버전**입니다.
-
----
-
 # **Lab-06 (Team Project)**
 
 ## Implementation of Follow-the-Gap (FTG) Methods on the F1TENTH Autonomous Vehicle (ROS 2 Foxy)
