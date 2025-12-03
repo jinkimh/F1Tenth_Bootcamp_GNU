@@ -190,8 +190,6 @@ Write the content **in descriptive text only** (screenshots not required):
 
 ---
 
----
-
 ## 🔒 License & Copyright
 
 The tutorials and related scripts are protected under the following copyright:
