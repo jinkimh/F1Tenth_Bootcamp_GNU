@@ -21,7 +21,7 @@
 # 1️⃣ **Task 1 — SLAM Toolbox로 맵 생성 (환경 구축)**
 
 🔗 GitHub Tutorial
-[https://github.com/jinkimh/F1Tenth_Bootcamp_GNU/blob/main/03-Tuturial_SLAM(English).md](https://github.com/jinkimh/F1Tenth_Bootcamp_GNU/blob/main/03-Tuturial_SLAM%28English%29.md)
+[https://github.com/jinkimh/F1Tenth_Bootcamp_GNU/blob/main/03-Tuturial_SLAM.md](https://github.com/jinkimh/F1Tenth_Bootcamp_GNU/blob/main/03-Tuturial_SLAM.md)
 
 ### 📌 **Task 설명 (추가 설명 포함)**
 
@@ -36,7 +36,7 @@
 # 2️⃣ **Task 2 — Particle Filter Localization 실행**
 
 🔗 GitHub Tutorial
-[https://github.com/jinkimh/F1Tenth_Bootcamp_GNU/blob/main/04-Tuturial_ParticleFilter(English).md](https://github.com/jinkimh/F1Tenth_Bootcamp_GNU/blob/main/04-Tuturial_ParticleFilter%28English%29.md)
+[https://github.com/jinkimh/F1Tenth_Bootcamp_GNU/blob/main/04-Tuturial_ParticleFilter.md](https://github.com/jinkimh/F1Tenth_Bootcamp_GNU/blob/main/04-Tuturial_ParticleFilter.md)
 
 ### 📌 **Task 설명 (추가 설명 포함)**
 
@@ -55,7 +55,7 @@
 # 3️⃣ **Task 3 — Manual Waypoint Generator로 Waypoint 생성**
 
 🔗 GitHub Tutorial
-[https://github.com/jinkimh/F1Tenth_Bootcamp_GNU/blob/main/06-1-Tutorial_Manual_WP_Gen(English).md](https://github.com/jinkimh/F1Tenth_Bootcamp_GNU/blob/main/06-1-Tutorial_Manual_WP_Gen%28English%29.md)
+[https://github.com/jinkimh/F1Tenth_Bootcamp_GNU/blob/main/06-1-Tutorial_Manual_WP_Gen.md](https://github.com/jinkimh/F1Tenth_Bootcamp_GNU/blob/main/06-1-Tutorial_Manual_WP_Gen.md)
 
 ### 📌 **Task 설명 (추가 설명 포함)**
 
@@ -70,7 +70,7 @@
 # 4️⃣ **Task 4 — Pure Pursuit 기반 완전 자율주행 구현**
 
 🔗 GitHub Tutorial
-[https://github.com/jinkimh/F1Tenth_Bootcamp_GNU/blob/main/06-2-Tutorial_F110_PP_ManWP.md](https://github.com/jinkimh/F1Tenth_Bootcamp_GNU/blob/main/06-2-Tutorial_F110_PP_ManWP.md)
+[https://github.com/jinkimh/F1Tenth_Bootcamp_GNU/blob/main/06-2-Tutorial_PP_ManualWP.md](https://github.com/jinkimh/F1Tenth_Bootcamp_GNU/blob/main/06-2-Tutorial_F110_PP_ManWP.md)
 
 ### 📌 **Task 설명 (추가 설명 포함)**
 
