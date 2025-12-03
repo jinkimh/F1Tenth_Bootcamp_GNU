@@ -75,7 +75,7 @@ The following four stages form a **single, connected pipeline**, meaning the ord
 # 4️⃣ **Task 4 — Implementing Pure Pursuit Autonomous Driving**
 
 🔗 GitHub Tutorial
-[https://github.com/jinkimh/F1Tenth_Bootcamp_GNU/blob/main/06-2-Tutorial_PP_ManualWP.md](https://github.com/jinkimh/F1Tenth_Bootcamp_GNU/blob/main/06-2-Tutorial_PP_ManualWP(English).md)
+[https://github.com/jinkimh/F1Tenth_Bootcamp_GNU/blob/main/06-2-Tutorial_PP_ManualWP(English).md](https://github.com/jinkimh/F1Tenth_Bootcamp_GNU/blob/main/06-2-Tutorial_PP_ManualWP(English).md)
 
 ### 📌 **Task Description (with additional explanation)**
 
