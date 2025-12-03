@@ -130,3 +130,16 @@ ros2 run pure_pursuit pure_pursuit_node.py
   * Pure Pursuit node
   * CSV file placement
 * The waypoint `.csv` format must follow the expected structure used by the Pure Pursuit implementation.
+
+---
+
+## 📄 Copyright
+
+```text
+© 2025 Jin Kim, Gyeongsang National University
+
+This document was created for experimental and educational use with the F1Tenth autonomous driving platform.
+Unauthorized reproduction and commercial use are prohibited.
+```
+
+---
